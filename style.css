@@ -1,17 +1,14 @@
-/* styles.css - MKWEB OS 7: Ultra-Fluid NO-SCROLL Layout */
+/* style.css - MKWEB OS 7: Gaming News Focused */
 
 /* --- Global Design Variables - Refined for OS 7 --- */
 :root {
-    /* Skalierungs-Faktoren: Noch aggressiver für VH, da kein Scrollen erlaubt ist */
-    /* Die Zahlen sind Experimentierwerte und müssen fein abgestimmt werden! */
-    --fluid-min-font: 0.7vw;  /* Basis für kleinere Texte */
-    --fluid-max-font: 1.0vw;  /* Basis für normale Texte */
-    --fluid-header-font: 1.3vw; /* Basis für Header-Elemente */
-    --fluid-time-font: 3vw; /* Basis für die Uhrzeit */
+    --fluid-min-font: 0.7vw;
+    --fluid-max-font: 1.0vw;
+    --fluid-header-font: 1.3vw;
 
-    --fluid-min-padding: 0.3vw; /* Extrem kleines Basis-Padding */
-    --fluid-max-padding: 0.7vw;   /* Normales Padding */
-    --fluid-large-padding: 1.2vw; /* Großes Padding (Container) */
+    --fluid-min-padding: 0.3vw;
+    --fluid-max-padding: 0.7vw;
+    --fluid-large-padding: 1.2vw;
 
     --t: 0.15s ease-out; /* Faster transitions */
     --r: 12px; /* Slightly smaller border-radius */
@@ -20,15 +17,15 @@
     --s-light: 0 2px 6px rgba(0,0,0,0.05); /* Even lighter shadow */
     --border-width: 1px; /* Thinner borders */
     --text-gradient-angle: 65deg;
-    --glass-reflection: transparent; /* Remove glass reflection */
-    --glow-strength: 0 0 5px; /* Reduced glow strength */
+    --glass-reflection: transparent;
+    --glow-strength: 0 0 5px;
     --glow-color: var(--acc);
-    --blur-intensity: 8px; /* Reduced blur intensity */
-    --saturate-intensity: 120%; /* Reduced saturate intensity */
+    --blur-intensity: 8px;
+    --saturate-intensity: 120%;
     --content-max-width: 1800px;
-    --inner-shadow-strength: inset 0 0 5px rgba(0,0,0,0.03); /* Lighter inner shadow */
+    --inner-shadow-strength: inset 0 0 5px rgba(0,0,0,0.03);
 
-    /* --- Themed Variables (Nur noch Dark Theme) --- */
+    /* --- Themed Variables (Dark Theme) --- */
     --bg: #0d0d0d;
     --fg: #e0e0e0;
     --dim: rgba(224,224,224,0.5);
@@ -52,8 +49,6 @@
 /* --- Base Styles --- */
 html {
     scroll-behavior: smooth;
-    /* WICHTIG: Font-size skaliert mit Breite UND HÖHE! */
-    /* Die 0.45vh ist ein sehr aggressiver Wert, um bei geringer Höhe stark zu schrumpfen */
     font-size: clamp(8px, 0.7vw + 0.45vh, 18px);
 }
 
@@ -68,36 +63,32 @@ html {
 body {
     background: var(--bg);
     color: var(--fg);
-    height: 100vh; /* Muss 100vh sein, um sicherzustellen, dass die Seite nicht scrollt */
+    height: 100vh;
     width: 100vw;
     transition: background var(--t), color var(--t);
-    overflow: hidden; /* **GANZ WICHTIG: KEIN SCROLLEN ERLAUBT!** */
+    overflow: hidden; /* KEIN SCROLLEN ERLAUBT! */
     position: relative;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    display: flex; /* Body wird selbst zum Flex-Container */
+    display: flex;
     flex-direction: column;
 }
-
-/* --- Animated Background Elements - REMOVED --- */
-.background-shape { display: none; }
-.grain { display: none; }
 
 .container {
     position: relative;
     z-index: 2;
-    height: 100%; /* Nimmt die gesamte verfügbare Höhe des Body ein */
-    padding: clamp(0.8rem, var(--fluid-large-padding), 2.5rem); /* Proportionales Padding */
+    height: 100%;
+    padding: clamp(0.8rem, var(--fluid-large-padding), 2.5rem);
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: clamp(0.5rem, var(--fluid-max-padding), 1.5rem); /* Proportionaler Abstand */
-    flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
-    min-height: 0; /* Erlaubt dem Container, zu schrumpfen, wenn die Inhalte es erfordern */
+    gap: clamp(0.5rem, var(--fluid-max-padding), 1.5rem);
+    flex-grow: 1;
+    min-height: 0;
 }
 
-/* --- Glassmorphism Base Style - Simplified --- */
+/* --- Glassmorphism Base Style --- */
 .glass {
     background: var(--gl);
     backdrop-filter: blur(var(--blur-intensity)) saturate(var(--saturate-intensity));
@@ -152,7 +143,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: var(--content-max-width);
-    padding: clamp(0.3rem, var(--fluid-max-padding), 1.5rem); /* Extrem reduziertes Padding */
+    padding: clamp(0.3rem, var(--fluid-max-padding), 1.5rem);
 }
 
 .logo {
@@ -179,7 +170,7 @@ body {
     align-items: center;
 }
 
-/* --- Buttons Styling - Simplified --- */
+/* --- Buttons Styling --- */
 button {
     padding: clamp(0.3rem, 0.5vw, 0.8rem) clamp(0.5rem, 0.8vw, 1.2rem);
     border: var(--border-width) solid var(--gb);
@@ -211,7 +202,7 @@ button:hover {
 }
 
 .user-avatar {
-    width: clamp(25px, 3vw, 45px); /* Noch kleinerer Avatar */
+    width: clamp(25px, 3vw, 45px);
     height: clamp(25px, 3vw, 45px);
     border-radius: 50%;
     display: flex;
@@ -234,206 +225,28 @@ button:hover {
     box-shadow: var(--glow-strength) var(--acc), var(--s);
 }
 
-.hidden-avatar {
-    opacity: 0 !important;
-    transform: scale(0.6) !important;
-    pointer-events: none !important;
-}
-
-
-/* --- Main Grid Layout --- */
-.main-grid {
+/* --- Main Content Area (instead of main-grid) --- */
+.main-content-area {
     width: 100%;
     max-width: var(--content-max-width);
-    height: 100%; /* WICHTIG: Nimmt gesamte verfügbare Höhe des Containers ein */
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    height: 100%; /* Takes full height of container */
+    display: flex;
+    flex-direction: column; /* Only news section here */
     gap: clamp(0.5rem, var(--fluid-max-padding), 1.5rem);
-    flex-grow: 1; /* WICHTIG: Nimmt den verbleibenden Platz im Container ein */
-    min-height: 0; /* Erlaubt dem Grid, zu schrumpfen */
-}
-
-.grid-left, .grid-right {
-    display: flex;
-    flex-direction: column;
-    gap: clamp(0.5rem, var(--fluid-max-padding), 1.5rem);
-    height: 100%; /* WICHTIG: Nehmen gesamte Höhe ihrer Spalte ein */
-    flex-grow: 1; /* Nehmen den verfügbaren Platz in der Spalte ein */
-    min-height: 0; /* Erlaubt ihnen, zu schrumpfen */
-}
-
-/* --- Search Section --- */
-.search-section {
-    padding: clamp(0.5rem, var(--fluid-max-padding), 1.2rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 1; /* Kann im Desktop-Grid wachsen */
-    min-height: 0; /* Erlaubt Schrumpfung */
-}
-
-.search-engines {
-    display: flex;
-    gap: clamp(0.2rem, 0.4vw, 0.6rem);
-    margin-bottom: clamp(0.4rem, 0.6vw, 1.2rem);
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.search-engine {
-    padding: clamp(0.25rem, 0.4vw, 0.5rem) clamp(0.5rem, 0.7vw, 0.9rem);
-    border-radius: 30px;
-    font-weight: 600;
-    font-size: clamp(0.55rem, var(--fluid-min-font), 0.8rem);
-}
-
-.search-box {
-    display: flex;
-    align-items: center;
-    border-radius: 30px;
-    padding: clamp(0.4rem, 0.5vw, 0.8rem) clamp(0.6rem, 0.9vw, 1.5rem);
-}
-
-#search {
-    flex: 1;
-    border: none;
-    background: transparent;
-    color: var(--fg);
-    font-size: clamp(0.7rem, var(--fluid-max-font), 1.1rem);
-    outline: none;
-    margin-left: clamp(0.4rem, 0.6vw, 1rem);
-}
-
-#search::placeholder {
-    color: var(--dim);
-}
-
-/* --- Time Display --- */
-.time-display {
-    text-align: center;
-    padding: clamp(0.5rem, var(--fluid-max-padding), 1.2rem);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-grow: 2; /* Kann im Desktop-Grid stärker wachsen */
-    min-height: 0; /* Erlaubt Schrumpfung */
-}
-
-#time {
-    font-size: clamp(1.5rem, var(--fluid-time-font), 4.5rem); /* Haupt-Hebel für die Uhr-Größe! */
-    font-weight: 800;
-    margin-bottom: clamp(0.05rem, 0.1vh, 0.3rem); /* Sehr geringer Margin */
-    background: linear-gradient(var(--text-gradient-angle), var(--acc), var(--fg), var(--acc));
-    background-size: 300% 300%;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: gradient 15s ease infinite alternate;
-    text-shadow: var(--glow-strength) rgba(var(--acc-rgb), 0.15);
-}
-
-#date {
-    font-size: clamp(0.6rem, var(--fluid-min-font), 1.2rem);
-    color: var(--dim);
-    font-weight: 300;
-    text-transform: uppercase;
-    letter-spacing: clamp(0.5px, 0.1vw, 2px);
-}
-
-/* --- NEU: Wetter Link Sektion Styles --- */
-.weather-link-section {
-    padding: clamp(0.5rem, var(--fluid-max-padding), 1.2rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 1;
-    text-align: center;
-    min-height: 0;
-}
-
-.weather-link-section h2 {
-    font-size: clamp(0.9rem, var(--fluid-header-font), 1.6rem);
-    font-weight: 700;
-    margin-bottom: clamp(0.4rem, 0.6vw, 1rem);
-    color: var(--fg);
-}
-
-.weather-link-button {
-    display: inline-flex;
-    align-items: center;
-    gap: clamp(0.3rem, 0.4vw, 0.8rem);
-    padding: clamp(0.5rem, 0.6vw, 1rem) clamp(0.8rem, 1vw, 1.8rem);
-    background: var(--gl);
-    border: var(--border-width) solid var(--gb);
-    border-radius: var(--r);
-    text-decoration: none;
-    color: var(--fg);
-    font-weight: 600;
-    font-size: clamp(0.7rem, var(--fluid-max-font), 1.1rem);
-    transition: all var(--t);
-    box-shadow: var(--s-light), var(--inner-shadow);
-}
-
-.weather-link-button:hover {
-    transform: translateY(-0.3em);
-    border-color: var(--acc);
-    box-shadow: var(--s), var(--glow-strength) rgba(var(--acc-rgb), 0.25);
-}
-
-.weather-link-button .weather-icon {
-    font-size: clamp(1.2rem, 1.5vw, 2.5rem);
-    color: var(--acc);
-    transition: all var(--t);
-}
-
-.weather-link-button:hover .weather-icon {
-    transform: scale(1.1);
-}
-
-.weather-notice {
-    margin-top: clamp(0.4rem, 0.6vw, 1rem);
-    font-size: clamp(0.6rem, var(--fluid-min-font), 0.9rem);
-    color: var(--dim);
-}
-/* Ende Wetter Link Sektion Styles */
-
-
-/* --- NEU: Zitate Sektion Styles --- */
-.quote-section {
-    padding: clamp(0.5rem, var(--fluid-max-padding), 1.2rem);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
     flex-grow: 1;
     min-height: 0;
 }
 
-#quote-text {
-    font-size: clamp(0.8rem, var(--fluid-max-font), 1.2rem);
-    font-weight: 600;
-    margin-bottom: clamp(0.2rem, 0.3vw, 0.6rem);
-    color: var(--fg);
-}
 
-#quote-author {
-    font-size: clamp(0.6rem, var(--fluid-min-font), 1rem);
-    color: var(--dim);
-}
-/* Ende Zitate Sektion Styles */
-
-
-/* --- Apps & Bookmarks Section (Adapted for Gaming News) --- */
-.news-section { /* Renamed from apps-section for clarity */
+/* --- News Section --- */
+.news-section {
     width: 100%;
     padding: clamp(0.5rem, var(--fluid-max-padding), 1.2rem);
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Nimmt den restlichen Platz ein */
-    min-height: 0; /* Erlaubt dieser Sektion, zu schrumpfen */
-    overflow: hidden; /* **WICHTIG: KEIN SCROLLEN AUCH HIER!** */
+    flex-grow: 1;
+    min-height: 0;
+    overflow: hidden; /* No internal scrolling, fit content */
 }
 
 .news-section h2 {
@@ -444,23 +257,24 @@ button:hover {
     color: var(--dim);
 }
 
-.news-container { /* Renamed from apps-container */
-    grid-template-columns: repeat(auto-fill, minmax(clamp(150px, 15vw + 8vh, 300px), 1fr)); /* Larger cards for news */
+.news-container {
+    display: grid;
+    /* Improved responsive grid: Auto-fit columns between 250px and 1fr */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 20vw, 350px), 1fr));
     gap: clamp(0.5rem, 0.8vw, 1.5rem);
-    overflow: hidden; /* **WICHTIG: KEIN INTERNES SCROLLEN!** */
+    overflow: hidden; /* Still no internal scrolling, content should fit */
     padding: clamp(0.1rem, 0.2vw, 0.5rem);
     flex-grow: 1;
     min-height: 0;
-    display: grid;
     max-height: 100%;
 }
 
-.news-card { /* Adapted from app-card */
+.news-card {
     background: var(--news-card-bg);
     border: var(--border-width) solid var(--news-card-border);
     border-radius: var(--r);
     padding: clamp(0.5rem, 0.8vw, 1.5rem);
-    text-align: left; /* Changed to left-align for news */
+    text-align: left;
     text-decoration: none;
     color: var(--fg);
     transition: all var(--t);
@@ -471,18 +285,18 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    aspect-ratio: 4 / 3; /* Aspect ratio for news cards */
+    aspect-ratio: 4 / 3; /* Maintain aspect ratio for cards */
 }
 
 .news-card:hover {
-    transform: translateY(-0.5em);
+    transform: translateY(-0.5em) translateZ(10px); /* Add slight Z-axis lift */
     border-color: var(--news-card-hover-border);
     box-shadow: var(--s), var(--glow-strength) rgba(var(--acc-rgb), 0.25);
 }
 
 .news-card-image {
     width: 100%;
-    height: 60%; /* Image takes 60% of card height */
+    height: 60%;
     background-size: cover;
     background-position: center;
     border-radius: calc(var(--r) - 4px);
@@ -508,17 +322,19 @@ button:hover {
     font-weight: 700;
     line-height: 1.3;
     margin-bottom: clamp(0.1rem, 0.2vw, 0.4rem);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
+    /* No line-clamp for now to prevent "abgehakt" text */
+    /* Text will wrap naturally or push card height slightly if needed */
+    flex-grow: 1; /* Allow title to take available space */
+    display: -webkit-box; /* Still use for potential future truncation, but not active */
     -webkit-box-orient: vertical;
+    overflow: hidden; /* Hide anything that truly overflows */
+    text-overflow: ellipsis; /* Add ellipsis if hidden by overflow */
 }
 
 .news-card .news-meta {
     font-size: clamp(0.5rem, var(--fluid-min-font), 0.8rem);
     color: var(--dim);
-    margin-top: auto; /* Push meta to the bottom */
+    margin-top: auto;
 }
 
 /* --- SR-Only class for accessibility --- */
@@ -534,43 +350,15 @@ button:hover {
     border-width: 0;
 }
 
-/* --- Media Queries for Layout Change (nicht nur Skalierung) --- */
-
-/* Bei schmaleren Bildschirmen auf eine Spalte wechseln */
+/* --- Media Queries for Layout Change --- */
 @media (max-width: 992px) {
-    /* `html` font-size hier überschreiben, um die Skalierung bei kleineren Geräten anzupassen */
     html {
-        font-size: clamp(7px, 0.8vw + 0.5vh, 16px); /* Noch aggressiver für mobile */
+        font-size: clamp(7px, 0.8vw + 0.5vh, 16px);
     }
 
     .container {
         padding: clamp(0.4rem, 1vw, 1.5rem);
         gap: clamp(0.4rem, 0.8vw, 1rem);
-    }
-    .main-grid {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column;
-        gap: clamp(0.4rem, 0.8vw, 1rem);
-    }
-    .grid-left, .grid-right {
-        flex-direction: column;
-        gap: clamp(0.4rem, 0.8vw, 1rem);
-    }
-
-    /* Diese Sektionen sollen ihre natürliche Höhe behalten */
-    .time-display, .search-section, .weather-link-section, .quote-section {
-        flex-grow: 0;
-        padding: clamp(0.4rem, 0.7vw, 1rem);
-        min-height: 0;
-    }
-
-    /* Die Uhr noch kleiner bei schmaleren Screens */
-    #time {
-        font-size: clamp(1.2rem, 5vw, 3rem);
-    }
-    #date {
-        font-size: clamp(0.5rem, 2vw, 1rem);
     }
 
     .header {
@@ -581,21 +369,22 @@ button:hover {
     .logo { font-size: clamp(1rem, 3.5vw, 2rem); }
     .controls { gap: clamp(0.2rem, 0.5vw, 0.8rem); flex-wrap: wrap; justify-content: center; }
 
-    /* News-Sektion bleibt der flexible Bereich */
-    .news-section { /* Renamed from apps-section */
-        order: 4;
-        flex-grow: 1; /* Nimmt den restlichen Platz ein */
-        min-height: clamp(150px, 20vh, 300px); /* A flexible minimum height for news */
+    .main-content-area {
+        gap: clamp(0.4rem, 0.8vw, 1rem);
+    }
+
+    .news-section {
+        flex-grow: 1;
+        min-height: clamp(150px, 20vh, 300px);
         padding: clamp(0.4rem, 0.7vw, 1rem);
     }
     .news-section h2 {
         font-size: clamp(0.8rem, 3vw, 1.4rem);
         margin-bottom: clamp(0.4rem, 0.7vw, 1rem);
     }
-    .news-container { /* Renamed from apps-container */
-        grid-template-columns: repeat(auto-fill, minmax(clamp(120px, 30vw, 250px), 1fr)); /* Smaller cards for mobile */
+    .news-container {
+        grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 40vw, 300px), 1fr)); /* Adjusted for mobile */
         gap: clamp(0.3rem, 0.5vw, 0.8rem);
-        overflow: hidden; /* **WICHTIG: KEIN INTERNES SCROLLEN!** */
     }
     .news-card {
         padding: clamp(0.3rem, 0.6vw, 1rem);
@@ -615,17 +404,17 @@ button:hover {
     }
 }
 
-/* --- Additional Styles for Menu Wrap --- */
+/* --- Menu Wrap Styles (as provided by user) --- */
 .menu-wrap {
     width: 100%;
     height: 100%;
     overflow: hidden;
-    display: none; /* Hidden by default, could be toggled with JS */
-    position: absolute; /* Position over existing content */
+    display: none;
+    position: absolute;
     top: 0;
     left: 0;
-    z-index: 100; /* Ensure it's on top */
-    background: rgba(0,0,0,0.8); /* Dark overlay */
+    z-index: 100;
+    background: rgba(0,0,0,0.8);
 }
 
 .menu {
@@ -634,7 +423,7 @@ button:hover {
     height: 100%;
     margin: 0;
     padding: 0;
-    list-style: none; /* Remove default list style */
+    list-style: none;
 }
 
 .menu__item {
@@ -642,7 +431,7 @@ button:hover {
     position: relative;
     overflow: hidden;
     text-align: center;
-    box-shadow: 0 -1px rgba(255,255,255,0.1); /* Subtle white shadow for separation */
+    box-shadow: 0 -1px rgba(255,255,255,0.1);
 }
 
 .menu__item:first-child {
@@ -660,13 +449,13 @@ button:hover {
     text-decoration: none;
     white-space: nowrap;
     font-weight: 600;
-    color: var(--fg); /* Use foreground color */
-    font-size: clamp(1.5rem, 4vh, 3rem); /* Scaled font size */
+    color: var(--fg);
+    font-size: clamp(1.5rem, 4vh, 3rem);
     transition: color var(--t);
 }
 
 .menu__item-link:hover {
-    color: var(--acc); /* Use accent color on hover */
+    color: var(--acc);
 }
 
 .menu__item-link:focus:not(:focus-visible) {
@@ -681,9 +470,9 @@ button:hover {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    background: var(--fg); /* Use foreground color for marquee background */
+    background: var(--fg);
     transform: translate3d(0, 101%, 0);
-    transition: transform 0.6s ease-out; /* Adjusted for consistency with --t */
+    transition: transform 0.6s ease-out;
 }
 
 .marquee__inner-wrap {
@@ -704,11 +493,11 @@ button:hover {
 }
 
 .marquee span {
-    color: var(--bg); /* Use background color for marquee text */
+    color: var(--bg);
     white-space: nowrap;
     text-transform: uppercase;
     font-weight: 400;
-    font-size: clamp(1rem, 4vh, 2.5rem); /* Scaled font size */
+    font-size: clamp(1rem, 4vh, 2.5rem);
     line-height: 1.2;
     padding: 1vh 1vw 0;
 }
@@ -736,17 +525,17 @@ button:hover {
     }
 }
 
-/* --- Additional Styles for Tilted Card --- */
+/* --- Tilted Card Styles (as provided by user, enhanced) --- */
 .tilted-card-figure {
     position: relative;
     width: 100%;
     height: 100%;
-    perspective: 800px;
+    perspective: 800px; /* Stronger perspective for 3D effect */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    overflow: hidden; /* Ensure content within is clipped */
+    overflow: hidden;
 }
 
 .tilted-card-mobile-alert {
@@ -773,11 +562,11 @@ button:hover {
     transform-style: preserve-3d;
     width: 100%;
     height: 100%;
-    transition: transform var(--t) ease-out; /* Smooth transition for tilt */
+    transition: transform var(--t) ease-out;
 }
 
 .news-card:hover .tilted-card-inner {
-    transform: rotateX(5deg) rotateY(-5deg); /* Example tilt on hover */
+    transform: rotateX(8deg) rotateY(-8deg) translateZ(15px); /* More pronounced tilt and Z-lift */
 }
 
 .tilted-card-img {
@@ -789,7 +578,7 @@ button:hover {
     object-fit: cover;
     border-radius: 15px;
     will-change: transform;
-    transform: translateZ(0); /* Base layer */
+    transform: translateZ(0);
     backface-visibility: hidden;
 }
 
@@ -801,14 +590,14 @@ button:hover {
     height: 100%;
     z-index: 2;
     will-change: transform;
-    transform: translateZ(30px); /* Overlay layer, closer to viewer */
-    background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0) 50%); /* Dark gradient at bottom */
+    transform: translateZ(30px);
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 50%); /* Darker gradient */
     opacity: 1;
     transition: opacity var(--t);
 }
 
 .news-card:hover .tilted-card-overlay {
-    opacity: 0.8; /* Slightly more opaque on hover */
+    opacity: 0.9;
 }
 
 
@@ -818,14 +607,14 @@ button:hover {
     left: clamp(5px, 1vw, 15px);
     bottom: clamp(5px, 1vw, 15px);
     border-radius: 4px;
-    background-color: var(--fg); /* Use foreground color for caption background */
+    background-color: var(--fg);
     padding: 4px 10px;
     font-size: clamp(0.6rem, 0.8vw, 0.9rem);
-    color: var(--bg); /* Use background color for caption text */
+    color: var(--bg);
     opacity: 0;
     z-index: 3;
     transition: opacity var(--t);
-    transform: translateZ(40px); /* Caption layer, even closer */
+    transform: translateZ(40px);
 }
 
 .news-card:hover .tilted-card-caption {
