@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKWEB OS 7 - Gaming News</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="menu-wrap" style="display: none;"> <ul class="menu">
+            <li class="menu__item">
+                <a class="menu__item-link" href="#">Home</a>
+                <div class="marquee">
+                    <div class="marquee__inner-wrap">
+                        <div class="marquee__inner">
+                            <span>Home</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Gaming');"></div>
+                            <span>Home</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=News');"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link" href="#">Latest News</a>
+                <div class="marquee">
+                    <div class="marquee__inner-wrap">
+                        <div class="marquee__inner">
+                            <span>Latest News</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Updates');"></div>
+                            <span>Latest News</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Gaming');"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link" href="#">Reviews</a>
+                <div class="marquee">
+                    <div class="marquee__inner-wrap">
+                        <div class="marquee__inner">
+                            <span>Reviews</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Games');"></div>
+                            <span>Reviews</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Tech');"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link" href="#">Esports</a>
+                <div class="marquee">
+                    <div class="marquee__inner-wrap">
+                        <div class="marquee__inner">
+                            <span>Esports</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Tournaments');"></div>
+                            <span>Esports</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Players');"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li class="menu__item">
+                <a class="menu__item-link" href="#">Contact</a>
+                <div class="marquee">
+                    <div class="marquee__inner-wrap">
+                        <div class="marquee__inner">
+                            <span>Contact</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Info');"></div>
+                            <span>Contact</span>
+                            <div class="marquee__img" style="background-image: url('https://via.placeholder.com/200x70/8a4ed4/ffffff?text=Us');"></div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="logo">MKWEB Gaming</h1>
+            <div class="controls">
+                <button class="glass">
+                    <span class="material-symbols-outlined">settings</span>
+                    <span class="sr-only">Settings</span>
+                </button>
+                <button class="glass">
+                    <span class="material-symbols-outlined">menu</span>
+                    <span class="sr-only">Menu</span>
+                </button>
+                <div class="user-avatar glass">U</div>
+            </div>
+        </header>
+
+        <main class="main-grid">
+            <div class="grid-left">
+                <section class="time-display glass">
+                    <div id="time">13:46</div>
+                    <div id="date">Saturday, June 21, 2025</div>
+                </section>
+
+                <section class="search-section glass">
+                    <div class="search-engines">
+                        <span class="search-engine glass">Google</span>
+                        <span class="search-engine glass">DuckDuckGo</span>
+                        <span class="search-engine glass">Bing</span>
+                    </div>
+                    <div class="search-box glass">
+                        <span class="material-symbols-outlined">search</span>
+                        <input type="text" id="search" placeholder="Search for news, games...">
+                    </div>
+                </section>
+            </div>
+
+            <div class="grid-right">
+                <section class="weather-link-section glass">
+                    <h2>Current Weather</h2>
+                    <a href="#" class="weather-link-button glass">
+                        <span class="material-symbols-outlined weather-icon">cloudy_snowing</span>
+                        Check Local Weather (15°C, Cloudy)
+                    </a>
+                    <p class="weather-notice">Powered by OpenWeatherMap</p>
+                </section>
+
+                <section class="quote-section glass">
+                    <p id="quote-text">"The only way to do great work is to love what you do."</p>
+                    <p id="quote-author">- Steve Jobs</p>
+                </section>
+            </div>
+            
+            <section class="news-section glass" style="grid-column: 1 / -1;">
+                <h2>Latest Gaming News</h2>
+                <div class="news-container">
+                    <a href="https://gamerant.com/elden-ring-shadow-of-the-erdtree-review/" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/6a0dad/ffffff?text=Elden+Ring+DLC" alt="Elden Ring DLC" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">Elden Ring DLC: Shadow of the Erdtree Review</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">Elden Ring DLC: Shadow of the Erdtree Breaks Records!</h3>
+                        <p class="news-meta">June 20, 2025 - FromSoftware</p>
+                    </a>
+
+                    <a href="https://gamerant.com/xbox-vr-headset-leaks-online/" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/4CAF50/ffffff?text=Xbox+VR+Leak" alt="Xbox VR Headset" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">Xbox VR Headset Leaks Online</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">Xbox VR Headset Leaked Online: Partnering with a Big Name!</h3>
+                        <p class="news-meta">June 21, 2025 - Game Rant</p>
+                    </a>
+
+                    <a href="https://gamerant.com/battlefield-6-leaked-footage-cinematic-destructive-moments/" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/FF5722/ffffff?text=Battlefield+6" alt="Battlefield 6" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">Battlefield 6 Leaked Footage</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">Battlefield 6 Leaked Footage Teases Cinematic Destruction!</h3>
+                        <p class="news-meta">June 21, 2025 - Game Rant</p>
+                    </a>
+
+                    <a href="https://www.pcgamer.com/news/rematch-surpasses-1-million-players-in-its-first-day-of-full-release/" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/2196F3/ffffff?text=Rematch+Game" alt="Rematch Game" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">Rematch Hits 1 Million Players</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">Indie Success: 'Rematch' Surpasses 1 Million Players on Day One!</h3>
+                        <p class="news-meta">June 21, 2025 - PC Gamer</p>
+                    </a>
+
+                    <a href="https://www.ign.com/articles/the-future-of-vr-gaming-what-innovations-are-coming" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/9C27B0/ffffff?text=VR+Gaming" alt="VR Gaming Future" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">The Future of VR Gaming</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">The Future of VR Gaming: What Innovations Are Coming?</h3>
+                        <p class="news-meta">June 21, 2025 - IGN</p>
+                    </a>
+
+                    <a href="https://kotaku.com/retro-gaming-revival-old-classics-making-a-comeback" class="news-card glass">
+                        <div class="tilted-card-figure">
+                            <p class="tilted-card-mobile-alert">Hover for effect</p>
+                            <div class="tilted-card-inner">
+                                <img src="https://via.placeholder.com/400x300/FFC107/000000?text=Retro+Gaming" alt="Retro Gaming Revival" class="tilted-card-img">
+                                <div class="tilted-card-overlay"></div>
+                                <span class="tilted-card-caption">Retro Gaming Resurgence</span>
+                            </div>
+                        </div>
+                        <h3 class="news-title">Retro Gaming Revival: Old Classics Making a Comeback!</h3>
+                        <p class="news-meta">June 20, 2025 - Kotaku</p>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script>
+        // JavaScript for dynamic content (time, date, quote) and menu toggle
+        function updateTimeAndDate() {
+            const now = new Date();
+            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
+            const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+
+            document.getElementById('time').textContent = now.toLocaleTimeString('en-US', timeOptions);
+            document.getElementById('date').textContent = now.toLocaleDateString('en-US', dateOptions);
+        }
+
+        setInterval(updateTimeAndDate, 1000);
+        updateTimeAndDate(); // Initial call
+
+        // Example quotes (replace with actual API fetch in a real app)
+        const quotes = [
+            { text: "The only way to do great work is to love what you do.", author: "Steve Jobs" },
+            { text: "Innovation distinguishes between a leader and a follower.", author: "Steve Jobs" },
+            { text: "It's not about ideas. It's about making ideas happen.", author: "Scott Belsky" },
+            { text: "Games are the most elevated form of art.", author: "Hidetaka Miyazaki" },
+            { text: "Stay awhile and listen.", author: "Deckard Cain" }
+        ];
+
+        function setRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            document.getElementById('quote-text').textContent = `"${quotes[randomIndex].text}"`;
+            document.getElementById('quote-author').textContent = `- ${quotes[randomIndex].author}`;
+        }
+
+        setRandomQuote(); // Initial quote
+
+        // Menu Toggle (conceptual - attach to a button click)
+        document.querySelector('.controls button:nth-child(2)').addEventListener('click', function() {
+            const menuWrap = document.querySelector('.menu-wrap');
+            if (menuWrap.style.display === 'none' || menuWrap.style.display === '') {
+                menuWrap.style.display = 'block';
+            } else {
+                menuWrap.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
